@@ -1,0 +1,7 @@
+sudo: required
+services:
+  - docker
+before_install:
+  - docker build -t codingpop/docker-react -f Dockerfile.dev .
+script:
+  - docker run codingpop/docker-react npm test -- --coverage
